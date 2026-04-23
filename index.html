@@ -78,6 +78,7 @@ body {
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -98,12 +99,53 @@ body {
 .vision {
     background: #e4ecff;
 }
+
+/* PANEL INFO */
+.info-box {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 </style>
 
 <script>
 function cambiarSeccion(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+}
+
+function mostrarInfo(tipo) {
+    let titulo = "";
+    let contenido = "";
+
+    switch(tipo) {
+        case "login":
+            titulo = "🔐 Iniciar sesión";
+            contenido = "Ingresa tu correo y contraseña en la pantalla principal para acceder al sistema.";
+            break;
+        case "productos":
+            titulo = "📦 Gestión de productos";
+            contenido = "Aquí puedes agregar, editar o eliminar productos, así como actualizar precios y stock.";
+            break;
+        case "ventas":
+            titulo = "💰 Ventas";
+            contenido = "Registra ventas fácilmente, genera facturas automáticas y controla ingresos.";
+            break;
+        case "inventario":
+            titulo = "📊 Inventario";
+            contenido = "Consulta el stock disponible y evita quedarte sin productos.";
+            break;
+        case "reportes":
+            titulo = "📈 Reportes";
+            contenido = "Visualiza estadísticas, ventas por fecha y rendimiento del negocio.";
+            break;
+    }
+
+    document.getElementById("infoTitulo").innerText = titulo;
+    document.getElementById("infoContenido").innerText = contenido;
+    document.getElementById("infoBox").style.display = "block";
 }
 </script>
 
@@ -133,11 +175,17 @@ function cambiarSeccion(id) {
     <h2>¿Cómo usar el software?</h2>
 
     <div class="cards">
-        <div class="card">🔐 Inicia sesión</div>
-        <div class="card">📦 Gestiona productos</div>
-        <div class="card">💰 Realiza ventas</div>
-        <div class="card">📊 Controla inventario</div>
-        <div class="card">📈 Consulta reportes</div>
+        <div class="card" onclick="mostrarInfo('login')">🔐 Inicia sesión</div>
+        <div class="card" onclick="mostrarInfo('productos')">📦 Gestiona productos</div>
+        <div class="card" onclick="mostrarInfo('ventas')">💰 Realiza ventas</div>
+        <div class="card" onclick="mostrarInfo('inventario')">📊 Controla inventario</div>
+        <div class="card" onclick="mostrarInfo('reportes')">📈 Consulta reportes</div>
+    </div>
+
+    <!-- PANEL DINÁMICO -->
+    <div id="infoBox" class="info-box" style="display:none;">
+        <h3 id="infoTitulo"></h3>
+        <p id="infoContenido"></p>
     </div>
 </div>
 
