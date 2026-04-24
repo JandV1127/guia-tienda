@@ -45,6 +45,7 @@ body {
     border-radius: 8px;
     background: #f1f3f7;
     text-align: left;
+    transition: 0.3s;
 }
 
 .sidebar button:hover {
@@ -61,11 +62,12 @@ body {
 /* CARDS */
 .card-custom {
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     transition: 0.3s;
     height: 100%;
+    border-left: 6px solid #0d6efd;
 }
 
 .card-custom:hover {
@@ -80,15 +82,6 @@ body {
 /* SECTION */
 .section { display:none; }
 .active { display:block; }
-
-/* BOX */
-.box {
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.mision { background:#e8f8f0; }
-.vision { background:#eef3ff; }
 
 /* FAQ */
 .faq-item {
@@ -156,7 +149,7 @@ function filtrar() {
 <!-- INICIO -->
 <div id="inicio" class="section active">
     <h1>Bienvenido</h1>
-    <p>Este sistema te permite gestionar tu tienda de forma profesional.</p>
+    <p>Este sistema te permite gestionar tu tienda de forma profesional, eficiente y segura.</p>
 </div>
 
 <!-- USO -->
@@ -167,33 +160,33 @@ function filtrar() {
     <div class="row g-3">
 
         <div class="col-md-4"><div class="card-custom">
-            <h5>📦 Productos</h5>
-            <p>Administra tu inventario, precios y stock en tiempo real.</p>
+            <h5>📦 Gestión de Productos</h5>
+            <p>Control total de inventario, precios, stock y categorías en tiempo real.</p>
         </div></div>
 
         <div class="col-md-4"><div class="card-custom">
-            <h5>💰 Ventas</h5>
-            <p>Registra ventas y genera facturas automáticamente.</p>
+            <h5>💰 Registro de Ventas</h5>
+            <p>Procesa ventas rápidas, genera facturas y controla ingresos automáticamente.</p>
         </div></div>
 
         <div class="col-md-4"><div class="card-custom">
-            <h5>👥 Clientes</h5>
-            <p>Guarda datos y mejora la atención al cliente.</p>
+            <h5>👥 Administración de Clientes</h5>
+            <p>Guarda información clave y mejora la relación con tus clientes.</p>
         </div></div>
 
         <div class="col-md-4"><div class="card-custom">
-            <h5>📊 Reportes</h5>
-            <p>Visualiza estadísticas y toma decisiones inteligentes.</p>
+            <h5>📊 Reportes Inteligentes</h5>
+            <p>Analiza tu negocio con estadísticas claras y toma decisiones estratégicas.</p>
         </div></div>
 
         <div class="col-md-4"><div class="card-custom">
             <h5>🏷 Promociones</h5>
-            <p>Crea descuentos y campañas para aumentar ventas.</p>
+            <p>Crea descuentos y ofertas para aumentar tus ventas.</p>
         </div></div>
 
         <div class="col-md-4"><div class="card-custom">
-            <h5>🧾 Facturación</h5>
-            <p>Envía comprobantes automáticos por correo.</p>
+            <h5>🧾 Facturación Automática</h5>
+            <p>Envía comprobantes y facturas directamente al correo del cliente.</p>
         </div></div>
 
     </div>
@@ -204,45 +197,55 @@ function filtrar() {
     <h2>Preguntas Frecuentes</h2>
 
     <div class="faq-item" onclick="toggleFAQ(this)">
-        ¿Cómo registro una venta?
-        <div class="faq-answer">Ve a "Registrar Venta" y agrega productos.</div>
+        ¿Cómo registrar una venta?
+        <div class="faq-answer">Dirígete a "Registrar Venta", selecciona los productos y confirma la compra.</div>
     </div>
 
     <div class="faq-item" onclick="toggleFAQ(this)">
-        ¿Cómo agrego productos?
-        <div class="faq-answer">En el módulo productos, haz clic en "Agregar".</div>
+        ¿Cómo agregar productos?
+        <div class="faq-answer">En el módulo "Productos", haz clic en agregar y completa los datos.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        ¿Cómo ver reportes?
+        <div class="faq-answer">Accede al módulo "Balance" para visualizar estadísticas y ganancias.</div>
     </div>
 
 </div>
 
 <!-- MISION -->
-<div id="vision" class="section">
-    <div class="card-help p-4">
+<div id="mision" class="section">
+    <div class="card-custom">
 
-        <h2 class="mb-3">👁 Nuestra Visión</h2>
+        <h2>🎯 Nuestra Misión</h2>
 
-        <p class="lead text-muted">
-            Convertirnos en el software de gestión de tiendas líder en Latinoamérica,
-            reconocido por su innovación, facilidad de uso y confiabilidad.
+        <p class="text-muted">
+            En GestiónTiendas, buscamos transformar la gestión de negocios mediante tecnología innovadora,
+            permitiendo a los usuarios optimizar procesos, mejorar la productividad y aumentar sus ingresos.
         </p>
 
         <hr>
 
         <div class="row text-center mt-4">
 
-            <div class="col-md-4">
-                <h5>🌎 Expansión</h5>
-                <p>Llegar a miles de negocios en toda la región.</p>
+            <div class="col-md-3">
+                <h5>⚡ Eficiencia</h5>
+                <p>Automatización de procesos para ahorrar tiempo.</p>
             </div>
 
-            <div class="col-md-4">
-                <h5>💡 Innovación</h5>
-                <p>Integrar nuevas tecnologías constantemente.</p>
+            <div class="col-md-3">
+                <h5>📊 Control</h5>
+                <p>Información clara para decisiones estratégicas.</p>
             </div>
 
-            <div class="col-md-4">
-                <h5>🔒 Confianza</h5>
-                <p>Ser una plataforma segura y estable para nuestros usuarios.</p>
+            <div class="col-md-3">
+                <h5>💼 Profesional</h5>
+                <p>Herramientas de nivel empresarial accesibles.</p>
+            </div>
+
+            <div class="col-md-3">
+                <h5>🚀 Crecimiento</h5>
+                <p>Impulsamos negocios hacia el éxito.</p>
             </div>
 
         </div>
@@ -251,38 +254,45 @@ function filtrar() {
 </div>
 
 <!-- VISION -->
-<div id="mision" class="section">
-    <div class="card-help p-4">
+<div id="vision" class="section">
+    <div class="card-custom">
 
-        <h2 class="mb-3">🎯 Nuestra Misión</h2>
+        <h2>👁 Nuestra Visión</h2>
 
-        <p class="lead text-muted">
-            Impulsar el crecimiento de pequeños y medianos negocios mediante 
-            soluciones tecnológicas modernas, intuitivas y eficientes.
+        <p class="text-muted">
+            Ser el software líder en gestión de tiendas en Latinoamérica,
+            destacándonos por innovación, facilidad de uso y confiabilidad.
         </p>
 
         <hr>
 
         <div class="row text-center mt-4">
 
-            <div class="col-md-4">
-                <h5>⚡ Eficiencia</h5>
-                <p>Optimizar procesos diarios para ahorrar tiempo y reducir errores.</p>
+            <div class="col-md-3">
+                <h5>🌎 Expansión</h5>
+                <p>Llegar a miles de negocios.</p>
             </div>
 
-            <div class="col-md-4">
-                <h5>📊 Control</h5>
-                <p>Brindar información clara para tomar decisiones inteligentes.</p>
+            <div class="col-md-3">
+                <h5>💡 Innovación</h5>
+                <p>Implementar nuevas tecnologías constantemente.</p>
             </div>
 
-            <div class="col-md-4">
-                <h5>🚀 Crecimiento</h5>
-                <p>Ayudar a escalar negocios con herramientas confiables.</p>
+            <div class="col-md-3">
+                <h5>🔒 Seguridad</h5>
+                <p>Protección de datos y estabilidad.</p>
+            </div>
+
+            <div class="col-md-3">
+                <h5>🏆 Liderazgo</h5>
+                <p>Ser referencia en el mercado.</p>
             </div>
 
         </div>
 
     </div>
+</div>
+
 </div>
 
 </body>
